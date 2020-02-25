@@ -1,4 +1,4 @@
-const articleClass = require('./article');
+const articleClass = require('../src/article');
 let article;
 let articleContent;
 let articleSummary;
@@ -36,4 +36,12 @@ beforeEach(() => {
 
 test('read title method returns title', () => {
   expect(article.readTitle()).toBe("Alex Salmond speech – first minister hits back over Scottish independence");
+});
+
+test('read body method returns body', () => {
+  expect(article.readBody()).toBe("<p>Alistair Darling, the leader of the no campaign, has put out this statement in response to Salmond’s speech:</p> <blockquote> <p>Alex Salmond is pretending the last week never happened.");
+});
+
+test('read summary returns a summary of the article', () => {
+  expect(article.readSummary()).toContain("Alex Salmond has been speaking out after a week of attacks over whether an independent Scotland would be able to keep the pound or remain in the EU.");
 });
